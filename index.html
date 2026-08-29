@@ -140,10 +140,43 @@
 
     <input type="tel" placeholder="Mobile Number" required><br><br>
 
-    <a class="btn" href="tel:+919200367937">CONTACT US</a>
+    <button type="button" class="btn" onclick="sendWhatsApp()">SEND ON WHATSAPP</button>
   </form>
   </section>
-    
+    <script>
+function sendWhatsApp() {
+  const inputs = document.querySelectorAll("#booking input");
+
+  const eventType = inputs[0].value;
+  const eventDate = inputs[1].value;
+  const location = inputs[2].value;
+  const palace = inputs[3].value;
+  const guests = inputs[4].value;
+  const budget = inputs[5].value;
+  const mobile = inputs[6].value;
+
+  if (!eventType || !eventDate || !location || !palace || !guests || !budget || !mobile) {
+    alert("Please fill all details.");
+    return;
+  }
+
+  const message =
+`SARKIT CATERING - BOOKING REQUEST
+
+Event Type: ${eventType}
+Event Date: ${eventDate}
+Event Location: ${location}
+Event Palace: ${palace}
+Number of Guests: ${guests}
+Budget: ${budget}
+Customer Mobile: ${mobile}`;
+
+  const whatsappURL =
+    "https://wa.me/919200367937?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+}
+    </script>
     
       
       
