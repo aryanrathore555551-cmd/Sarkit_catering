@@ -115,7 +115,64 @@
       border-top: 1px solid #333;
       color: #999;
       margin-top: 30px;
+   /* PACKAGE MENU */
+#menu {
+    padding: 60px 20px;
+}
+
+#menu h2 {
+    color: #d4af37;
+    font-size: 34px;
+    margin-bottom: 35px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.packages-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package-card {
+    background: #111;
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+}
+
+.package-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.package-card h3 {
+    color: #d4af37;
+    font-size: 24px;
+    margin: 18px 10px 8px;
+}
+
+.package-card p {
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .packages-container {
+        grid-template-columns: 1fr;
     }
+
+    #menu h2 {
+        font-size: 28px;
+    }
+} }
   </style>
 </head>
 
@@ -135,7 +192,32 @@
 
     <a class="btn" href="#booking">BOOKING OPEN</a>
   </section>
+<section class="section" id="menu">
+    <h2>PACKAGES FOR</h2>
 
+    <div class="packages-container">
+
+        <div class="package-card">
+    <img src="IMG_20260906_113215.jpg" alt="Premium Package">
+    <h3>PREMIUM PACKAGE</h3>
+    <p>₹550 PER PLATE</p>
+</div>
+
+<div class="package-card">
+    <img src="IMG_20260906_113236.jpg" alt="Golden Package">
+    <h3>GOLDEN PACKAGE</h3>
+    <p>₹450 PER PLATE</p>
+</div>
+
+<div class="package-card">
+    <img src="IMG_20260906_113259.jpg" alt="Silver Package">
+    <h3>SILVER PACKAGE</h3>
+    <p>₹350 PER PLATE</p>
+</div>
+          
+
+    </div>
+</section>
   <section class="section">
     <h2>Our Catering Service</h2>
     <p>
