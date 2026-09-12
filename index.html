@@ -22,6 +22,7 @@ gtag('config', 'AW-18420450857/pzIiCK3jsOscEKmMx89E', {
 <title>Sarkit Catering Service</title>
 
 <style>
+
 * {
   margin: 0;
   padding: 0;
@@ -120,6 +121,14 @@ h1 {
 .menu-btn {
   padding: 14px 32px;
   font-size: 17px;
+  min-width: 220px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  background: #f0c94a;
+  transform: scale(1.03);
 }
 
 form {
@@ -176,18 +185,31 @@ footer {
   .section {
     padding: 45px 18px;
   }
+
+  .menu-btn {
+    min-width: 200px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
   <h1>SARKIT CATERING</h1>
-  <p class="tagline">SARKIT CATERING SERVICE</p>
+
+  <p class="tagline">
+    SARKIT CATERING SERVICE
+  </p>
+
 </header>
 
+
 <section class="hero">
+
   <h2>Make Your Event Special</h2>
 
   <p>
@@ -195,8 +217,12 @@ footer {
     for your special occasions.
   </p>
 
-  <a class="btn" href="#booking">BOOKING OPEN</a>
+  <a class="btn" href="#booking">
+    BOOKING OPEN
+  </a>
+
 </section>
+
 
 <section class="section">
 
@@ -207,13 +233,55 @@ footer {
     View the complete menu and package details.
   </p>
 
+
   <div class="menu-preview">
+
+    <!-- MAIN MENU PACKAGE BUTTON -->
+
     <a class="menu-btn" href="menu.html">
       VIEW MENU PACKAGES
     </a>
+
+    <br><br>
+
+
+    <!-- MENU BUTTON -->
+
+    <a class="menu-btn" href="#">
+      MENU
+    </a>
+
+    <br><br>
+
+
+    <!-- SERVICE BUTTON -->
+
+    <a class="menu-btn" href="#">
+      SERVICE
+    </a>
+
+    <br><br>
+
+
+    <!-- SETUPS BUTTON -->
+
+    <a class="menu-btn" href="#">
+      SETUPS
+    </a>
+
+    <br><br>
+
+
+    <!-- REVIEW VIDEOS BUTTON -->
+
+    <a class="menu-btn" href="#">
+      REVIEW VIDEOS
+    </a>
+
   </div>
 
 </section>
+
 
 <section class="section">
 
@@ -227,37 +295,49 @@ footer {
 
 </section>
 
+
 <section class="section" id="booking">
 
   <h2>Booking Open</h2>
 
-  <p>Please provide your event details:</p>
+  <p>
+    Please provide your event details:
+  </p>
+
 
   <a href="tel:9200367937" class="call-btn">
     📞 CALL NOW: 9200367937
   </a>
 
+
   <form id="bookingForm">
 
     <input type="text" placeholder="Event Type" required>
+
     <br><br>
 
     <input type="text" placeholder="Event Date (DD/MM/YYYY)" required>
+
     <br><br>
 
     <input type="text" placeholder="Event Location" required>
+
     <br><br>
 
     <input type="text" placeholder="Event Palace" required>
+
     <br><br>
 
     <input type="number" placeholder="Number of Guests" required>
+
     <br><br>
 
     <input type="text" placeholder="Budget" required>
+
     <br><br>
 
     <input type="tel" placeholder="Mobile Number" required>
+
     <br><br>
 
     <button type="button" class="btn" onclick="sendWhatsApp()">
@@ -267,6 +347,7 @@ footer {
   </form>
 
 </section>
+
 
 <script>
 
@@ -282,6 +363,7 @@ function sendWhatsApp() {
   const budget = inputs[5].value.trim();
   const mobile = inputs[6].value.trim();
 
+
   if (
     !eventType ||
     !eventDate ||
@@ -291,9 +373,13 @@ function sendWhatsApp() {
     !budget ||
     !mobile
   ) {
+
     alert("Please fill all details.");
+
     return;
+
   }
+
 
   const message =
 `SARKIT CATERING - BOOKING REQUEST
@@ -306,17 +392,23 @@ Number of Guests: ${guests}
 Budget: ${budget}
 Customer Mobile: ${mobile}`;
 
+
   const whatsappURL =
     "https://wa.me/919200367937?text=" +
     encodeURIComponent(message);
 
+
   window.open(whatsappURL, "_blank");
+
 }
 
 </script>
 
+
 <footer>
+
   © 2026 Sarkit Catering Service. All Rights Reserved.
+
 </footer>
 
 </body>
