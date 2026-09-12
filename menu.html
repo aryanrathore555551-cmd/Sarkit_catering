@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Menu Packages | Sarkit Catering Service</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 22px 15px;
+      border-bottom: 1px solid #c9a227;
+    }
+
+    header h1 {
+      color: #d4af37;
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: #ddd;
+      font-size: 15px;
+    }
+
+    .page-title {
+      padding: 40px 18px 25px;
+    }
+
+    .page-title h2 {
+      color: #d4af37;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .page-title p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .packages-container {
+      width: min(100%, 1050px);
+      margin: 0 auto;
+      padding: 10px 20px 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .package-card {
+      background: #111;
+      border: 1px solid #d4af37;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.18);
+    }
+
+    .package-image {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      display: block;
+      background: #111;
+    }
+
+    .package-info {
+      padding: 16px 10px 20px;
+    }
+
+    .package-info h3 {
+      color: #d4af37;
+      font-size: 22px;
+      margin-bottom: 7px;
+    }
+
+    .price {
+      color: white;
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .back-btn,
+    .book-btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .back-btn {
+      color: #d4af37;
+      border: 1px solid #d4af37;
+    }
+
+    .book-btn {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .bottom-buttons {
+      padding: 0 20px 50px;
+    }
+
+    footer {
+      padding: 25px;
+      border-top: 1px solid #333;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .packages-container {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        gap: 22px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .package-card {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .package-image {
+        max-height: 560px;
+      }
+
+      .page-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>SARKIT CATERING</h1>
+    <p>SARKIT CATERING SERVICE</p>
+  </header>
+
+  <section class="page-title">
+    <h2>MENU PACKAGES</h2>
+    <p>Select the package that suits your event.</p>
+  </section>
+
+  <main class="packages-container">
+
+    <!-- 1. Silver Package -->
+    <div class="package-card">
+      <img
+        class="package-image"
+        src="IMG_20260906_113259.jpg"
+        alt="Silver Package - ₹350 per plate"
+        loading="lazy"
+      >
+      <div class="package-info">
+        <h3>SILVER PACKAGE</h3>
+        <p class="price">₹350 PER PLATE</p>
+      </div>
+    </div>
+
+    <!-- 2. Golden Package -->
+    <div class="package-card">
+      <img
+        class="package-image"
+        src="IMG_20260906_113236.jpg"
+        alt="Golden Package - ₹450 per plate"
+        loading="lazy"
+      >
+      <div class="package-info">
+        <h3>GOLDEN PACKAGE</h3>
+        <p class="price">₹450 PER PLATE</p>
+      </div>
+    </div>
+
+    <!-- 3. Premium Package -->
+    <div class="package-card">
+      <img
+        class="package-image"
+        src="IMG_20260906_113215.jpg"
+        alt="Premium Package - ₹550 per plate"
+        loading="lazy"
+      >
+      <div class="package-info">
+        <h3>PREMIUM PACKAGE</h3>
+        <p class="price">₹550 PER PLATE</p>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="bottom-buttons">
+    <a href="index.html" class="back-btn">← BACK TO HOME</a>
+    <a href="index.html#booking" class="book-btn">BOOK NOW</a>
+  </div>
+
+  <footer>
+    © 2026 Sarkit Catering Service. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
