@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+  <title>Menu Categories | Sarkit Catering Service</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --gold: #d4af37;
+      --gold-light: #f0c94a;
+      --page: #0b0b0b;
+      --card: #141414;
+      --muted: #c4c4c4;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 22px 16px;
+      text-align: center;
+      border-bottom: 1px solid #5b4a1c;
+    }
+    header h1 {
+      margin: 0 0 6px;
+      color: var(--gold);
+      font-size: clamp(25px, 5vw, 32px);
+    }
+    header p { margin: 0; color: #ddd; }
+    main {
+      width: min(100% - 32px, 1050px);
+      margin: 0 auto;
+      padding: 34px 0 46px;
+    }
+    .page-heading { margin-bottom: 24px; text-align: center; }
+    .page-heading h2 {
+      margin: 0 0 9px;
+      color: var(--gold);
+      font-size: clamp(30px, 6vw, 40px);
+      letter-spacing: 1px;
+    }
+    .page-heading p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .category-button {
+      min-height: 76px;
+      padding: 16px;
+      border: 1px solid #766126;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #1a1915, var(--card));
+      color: #fff;
+      font: inherit;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .category-button:hover, .category-button:focus-visible {
+      border-color: var(--gold-light);
+      background: #211c10;
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .category-button span { color: var(--gold); margin-right: 10px; }
+    .back-button, .home-button {
+      display: inline-block;
+      min-height: 46px;
+      padding: 13px 19px;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      color: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+    }
+    .back-button { margin-bottom: 22px; background: transparent; cursor: pointer; font: inherit; font-weight: 700; }
+    .back-button:hover, .home-button:hover { background: #211c10; }
+    .detail-heading { margin-bottom: 24px; text-align: center; }
+    .detail-heading h2 { margin: 0 0 8px; color: var(--gold); font-size: clamp(27px, 5vw, 36px); }
+    .detail-heading p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .photo-card {
+      min-height: 220px;
+      overflow: hidden;
+      border: 1px solid #3e3827;
+      border-radius: 12px;
+      background: var(--card);
+    }
+    .photo-card img { display: block; width: 100%; height: 260px; object-fit: cover; }
+    .photo-empty {
+      min-height: 220px;
+      display: grid;
+      place-content: center;
+      gap: 10px;
+      padding: 24px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .photo-empty .camera { color: var(--gold); font-size: 38px; }
+    .bottom-links { display: flex; justify-content: center; margin-top: 32px; }
+    [hidden] { display: none !important; }
+    footer { padding: 22px 12px; border-top: 1px solid #333; color: #999; text-align: center; }
+    @media (max-width: 720px) {
+      .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+      .category-button { min-height: 72px; padding: 13px; font-size: 15px; }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .photo-card img { height: 210px; }
+    }
+    @media (max-width: 420px) {
+      main { width: min(100% - 24px, 1050px); padding-top: 26px; }
+      .category-grid, .photo-grid { grid-template-columns: 1fr; }
+      .category-button { min-height: 62px; }
+      .photo-card img { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SARKIT CATERING</h1>
+    <p>SARKIT CATERING SERVICE</p>
+  </header>
+
+  <main>
+    <section id="category-view" aria-labelledby="category-title">
+      <div class="page-heading">
+        <h2 id="category-title">CATEGORY</h2>
+        <p>Apni pasand ki category select karke uske food photos dekhein.</p>
+      </div>
+      <div class="category-grid" id="category-grid"></div>
+    </section>
+
+    <section id="detail-view" aria-live="polite" hidden>
+      <button class="back-button" id="back-button" type="button">← All Categories</button>
+      <div class="detail-heading">
+        <h2 id="detail-title"></h2>
+        <p id="detail-description"></p>
+      </div>
+      <div class="photo-grid" id="photo-grid"></div>
+    </section>
+
+    <div class="bottom-links">
+      <a class="home-button" href="index.html">← Back to Home</a>
+    </div>
+  </main>
+
+  <footer>© 2026 Sarkit Catering Service. All Rights Reserved.</footer>
+
+  <script>
+    const categories = [
+      "Paneer Sabji",
+      "Main Course",
+      "Chapati Pudi",
+      "Starter",
+      "Sweets",
+      "Chaat Counter",
+      "Chinese Counter",
+      "South Indian Counter",
+      "Italian Counter",
+      "Fast Foods",
+      "Live Counter",
+      "Drinks"
+    ];
+
+    // Add each category's image paths here when the photos are provided.
+    // Example: "Paneer Sabji": ["images/paneer-1.jpg", "images/paneer-2.jpg"]
+    const categoryPhotos = {};
+
+    const categoryView = document.getElementById("category-view");
+    const detailView = document.getElementById("detail-view");
+    const categoryGrid = document.getElementById("category-grid");
+    const detailTitle = document.getElementById("detail-title");
+    const detailDescription = document.getElementById("detail-description");
+    const photoGrid = document.getElementById("photo-grid");
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    }
+
+    function showCategory(name, updateAddress = true) {
+      if (!categories.includes(name)) return showCategories(updateAddress);
+
+      detailTitle.textContent = name;
+      const photos = categoryPhotos[name] || [];
+      detailDescription.textContent = photos.length
+        ? `${photos.length} photo${photos.length === 1 ? "" : "s"}`
+        : "Is category ki photos jald add hongi.";
+      photoGrid.replaceChildren();
+
+      if (photos.length) {
+        photos.forEach((src, index) => {
+          const card = document.createElement("div");
+          card.className = "photo-card";
+          const image = document.createElement("img");
+          image.src = src;
+          image.alt = `${name} photo ${index + 1}`;
+          image.loading = "lazy";
+          card.append(image);
+          photoGrid.append(card);
+        });
+      } else {
+        const empty = document.createElement("div");
+        empty.className = "photo-card photo-empty";
+        empty.innerHTML = '<span class="camera" aria-hidden="true">📷</span><span>Photos coming soon</span>';
+        photoGrid.append(empty);
+      }
+
+      categoryView.hidden = true;
+      detailView.hidden = false;
+      if (updateAddress) history.pushState({ category: name }, "", `#${slugify(name)}`);
+      document.title = `${name} | Sarkit Catering Service`;
+      document.getElementById("back-button").focus();
+    }
+
+    function showCategories(updateAddress = true) {
+      detailView.hidden = true;
+      categoryView.hidden = false;
+      document.title = "Menu Categories | Sarkit Catering Service";
+      if (updateAddress && location.hash) history.pushState({}, "", location.pathname);
+    }
+
+    categories.forEach((name, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "category-button";
+      button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${name}`;
+      button.addEventListener("click", () => showCategory(name));
+      categoryGrid.append(button);
+    });
+
+    document.getElementById("back-button").addEventListener("click", () => showCategories());
+    window.addEventListener("popstate", () => {
+      const selected = categories.find((name) => slugify(name) === location.hash.slice(1));
+      selected ? showCategory(selected, false) : showCategories(false);
+    });
+
+    const initialCategory = categories.find((name) => slugify(name) === location.hash.slice(1));
+    if (initialCategory) showCategory(initialCategory, false);
+  </script>
+</body>
+</html>
